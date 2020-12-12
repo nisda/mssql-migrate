@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+
+  mssql:
+    container_name: mssql
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile_mssql
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssW0rd!
+      - MSSQL_PID=Express
+      - MSSQL_LCID=1041
+      - MSSQL_COLLATION=Japanese_CI_AS
+    volumes:
+      - ./docker/mssql-init:/init-code
+      - ./docker/.mssql/data:/var/opt/mssql/data
+      - ./docker/.mssql/log:/var/opt/mssql/log
+      - ./docker/.mssql/secrets:/var/opt/mssql/sec
+
+  migrate-sample:
+    container_name: "migrate-sample"
+    image: local/migrate-test
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile_migrate-sample
+    environment:
+      - MSSQL_MIGRATE_DB_HOST=mssql
+      - MSSQL_MIGRATE_DB_PORT=1433
+      - MSSQL_MIGRATE_DB_NAME=test_db
+      - MSSQL_MIGRATE_DB_USER=SA
+      - MSSQL_MIGRATE_DB_PASS=P@ssW0rd!
+    volumes:
+      - ./migrate:/src
+    depends_on:
+      - mssql

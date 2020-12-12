@@ -1,0 +1,11 @@
+import os
+
+MSSQL_MIGRATE_FILE_DIR  = os.getenv("MSSQL_MIGRATE_FILE_DIR", "./migration/")
+MSSQL_MIGRATE_DB_HOST   = os.getenv("MSSQL_MIGRATE_DB_HOST", "")
+MSSQL_MIGRATE_DB_PORT   = os.getenv("MSSQL_MIGRATE_DB_PORT", "1433")
+MSSQL_MIGRATE_DB_NAME   = os.getenv("MSSQL_MIGRATE_DB_NAME", "")
+MSSQL_MIGRATE_DB_USER   = os.getenv("MSSQL_MIGRATE_DB_USER", "")
+MSSQL_MIGRATE_DB_PASS   = os.getenv("MSSQL_MIGRATE_DB_PASS", "")
+
+MSSQL_MIGRATE_SCHEMA    = os.getenv("MSSQL_MIGRATE_SCHEMA", ["schema01", "schema02"])
+MSSQL_MIGRATE_TABLE     = os.getenv("MSSQL_MIGRATE_TABLE", "schema01.mssql_migrate")

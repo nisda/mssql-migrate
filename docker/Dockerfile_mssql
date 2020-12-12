@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+USER root
+
+# RUN mkdir /init-code
+COPY ./docker/mssql-init/* ./init-code/
+WORKDIR /init-code
+
+RUN chmod +x ./init.sh
+CMD /bin/bash ./entrypoint.sh
