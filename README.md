@@ -26,8 +26,8 @@ python 3.8 製。
 ```
 <your-work-directory>/
   ├ migration/          ... マイグレーションファイルを置くディレクトリ
-  ├ config.py           ... 設定ファイル。[./migrate/config.py](./migrate/config.py) をコピー
-  └ mssql-migrate.py    ... ツール本体。[./migrate/mssql-migrate.py](./migrate/mssql-migrate.py) をコピー
+  ├ config.py           ... 設定ファイル。[./migrate/config.py] をコピー
+  └ mssql-migrate.py    ... ツール本体。[./migrate/mssql-migrate.py] をコピー
 ```
 
 ### 設定
