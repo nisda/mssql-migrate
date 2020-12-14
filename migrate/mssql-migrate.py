@@ -659,7 +659,7 @@ if __name__ == '__main__':
         }
     }
 
-    parser_status = subparsers.add_parser('show', help='show migrate history')
+    parser_status = subparsers.add_parser('status', help='show migrate history')
     parser_status.set_defaults(func=subcmd_migrate_status)
     parser_status.add_argument(*args_config['args'], **args_config['kwargs'])
 
