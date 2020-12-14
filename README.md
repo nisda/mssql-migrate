@@ -76,7 +76,7 @@ mssql-migrate.py new <NAME>
 # 
 
 # 現在のマイグレーション適用状況を確認
-mssql-migrate.py show
+mssql-migrate.py status
 
 # マイグレーション実行
 #    default: 未適用のマイグレーションファイルを全て適用
@@ -120,7 +120,7 @@ python3 mssql-migrate.py --help
 python3 mssql-migrate.py up --help
 
 # 現在のマイグレーション適用状況を参照
-python3 mssql-migrate.py show
+python3 mssql-migrate.py status
 
 # マイグレーション
 python3 mssql-migrate.py up
